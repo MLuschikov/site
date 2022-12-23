@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Групповуха</title>
+    <script src="js/dist/Component.js"></script>
+    <script src="js/dist/Template.js"></script>
+
+    <link id="style" rel="stylesheet" href="css/darkStyle.css">
+    
+    <script src="js/shot.js"></script>
+
+    <script src="js/shotRandom.js"></script>
+
+    <script src="js/uravnenie.js"></script>
+
+    <script src="js/quest/data.js"></script>
+    <script src="js/quest/game.js"></script>
+
+    <script src="js/Canvas.js"></script>
+    <script src="js/mainCanvas.js"></script>
+    <script src="js/UI.js"></script>
+    
+    <script src="js/Calculator/RealCalculator.js"></script>
+    <script src="js/Calculator/Complex.js"></script>
+    <script src="js/Calculator/ComplexCalculator.js"></script>
+    <script src="js/Calculator/Vector.js"></script>
+    <script src="js/Calculator/VectorCalculator.js"></script>
+    <script src="js/Calculator/Matrix.js"></script>
+    <script src="js/Calculator/MatrixCalculator.js"></script>
+    <script src="js/CalculatorMenu.js"></script>
+    <script src="js/Calculator.js"></script>
+    
+    <script src="js/Calculator/Polinoms/Member.js"></script>
+    <script src="js/Calculator/Polinoms/Polinomial.js"></script>
+    <script src="js/Calculator/Polinoms/PolinomialCalculator.js"></script>
+    <script src="js/PolinomialCalculatorMenu.js"></script>
+    
+    <script src="js/src/App.js"></script>
+    <script src="js/src/AppTemplate.js"></script>
+    <script src="js/src/index.js"></script>
+</head>
+
+<body>
+    <button id="light-theme"> <img src="img/moon.png" id="light-theme-image"> </button>
+
+    <div id="down">
+        <div class="top-image" id="top-thing">
+            <div class="Riccontent-item" id="RicshotContent">
+                <img src="img/рикардо стрелок.png" width="800px">
+            </div>
+            <div class="Riccontent-item hide" id="RicmultyShotContent">
+                <img src="img/рикардо слепой стрелок стрелок.png" width="800px">
+            </div>
+            <div class="Riccontent-item hide" id="RicrootsContent">
+                <img src="img/рикардо математик.png" width="800px">
+            </div>
+            <div class="Riccontent-item hide" id="RicRPGContent">
+                <img src="img/рикардо магович.png" width="800px">
+            </div>
+            <div class="Riccontent-item hide" id="RicCanvasContent">
+                <img src="img/рикардо чертилос.png" width="800px">
+            </div>
+            <div class="Riccontent-item hide" id="RicCalculatorContent">
+                <img src="img/рикардо чертилос.png" width="800px">
+            </div>
+            <div class="Riccontent-item hide" id="RicPolinomContent">
+                <img src="img/рикардо чертилос.png" width="800px">
+            </div>
+        </div>
+
+        <div class="menu" id="top-thing">
+            <button class="menu-item" data-content="shotContent">Мишень</button>
+            <button class="menu-item" data-content="multyShotContent">Несколько выстрелов</button>
+            <button class="menu-item" data-content="rootsContent">Корни уравнений</button>
+            <button class="menu-item" data-content="RPGContent">РПГ</button>
+            <button class="menu-item" data-content="CanvasContent">Рисовашки</button>
+            <button class="menu-item" data-content="CalculatorContent">Вычисляшки</button>
+            <button class="menu-item" data-content="PolinomContent">Многочлен</button>
+        </div>
+    </div>
+
+    <div id="down">
+        <div class="content-item" id="shotContent">
+            <div>
+                <input id="x" placeholder="Введите Х">
+                <input id="y" placeholder="Введите Y">
+            </div>
+            <button id="shot">Выстрел!</button>
+            <span id="result" class="txt"></span>
+        </div>
+        <div class="content-item hide" id="multyShotContent">
+            <div>
+                <input id="count" placeholder="Количество выстрелов">
+                <br>
+                <span class="txt">Диапозон:</span>
+                <input id="min" placeholder="От">
+                <input id="max" placeholder="До">
+            </div>
+            <button id="shotMany">Выстрел!</button>
+            <span id="result2" class="txt"></span>
+        </div>
+        <div class="content-item hide" id="rootsContent">
+            <div>
+                <input id="a" placeholder="a">
+                <input id="b" placeholder="b">
+                <input id="c" placeholder="c">
+                <input id="d" placeholder="d">
+                <input id="e" placeholder="e">
+            </div>
+            <button id="getRoots">Найти корни</button>
+            <span id="resultRoots" class="txt"></span>
+        </div>
+        <div class="content-item hide" id="RPGContent">
+            <h1 class="txt">РПГ-шечка!!!</h1>
+            <div>
+                <h2 id="question-title" class="txt"></h2>
+                <img id="question-image" width="300px">
+                <p id="question-description" class="txt"></p>
+                <div id="question-asks"></div>
+            </div>
+        </div>
+        <div class="content-item hide" id="CanvasContent">
+            <canvas id="graph"></canvas>
+
+            <div id="functionsChecklist">
+                <div id="checklistFiller"></div>
+                <button id="functionPlus">+</button>
+            </div>
+        </div>
+        <div class="content-item hide" id="CalculatorContent">
+            <div>
+                <textarea id="calc-value1" cols="27" rows="12"></textarea>
+                <textarea id="calc-value2" cols="27" rows="12"></textarea>
+            </div>
+            <button class="operand" data-operand="add">+</button>
+            <button class="operand" data-operand="sub">-</button>
+            <button class="operand" data-operand="mult">*</button>
+            <button class="operand" data-operand="div">/</button>
+        </div>
+        <div class="content-item hide" id="PolinomContent">
+            <div>
+                <input id="poly-input-1" placeholder="полином 1">
+                <input id="poly-input-2" placeholder="полином 2">
+                <input id="poly-point" placeholder="точка">
+            </div>
+            <button class="polyOperand" data-operand="add">+</button>
+            <button class="polyOperand" data-operand="sub">-</button>
+            <button class="polyOperand" data-operand="mult">*</button>
+            <button id="polyPointButton">значение в точке</button>
+        </div>
+    </div>
+</body>
+
+</html>
